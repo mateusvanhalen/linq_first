@@ -19,22 +19,33 @@ namespace linq
             //also note this is how you console write first letter
 
             var queryResults =
-                from n in fruits
-                where n.StartsWith("L")
-                select n;
+                from f in fruits
+                where f.StartsWith("L")
+                select f;
 
             foreach (var item in queryResults)
                 {
                     Console.WriteLine(item);
                 }
-            // List<int> numbers = new List<int>()
-            //     {
-            //         15, 8, 21, 24, 32, 13, 30, 12, 7, 54, 48, 4, 49, 96
-            //     };
+            //sort names alphabetical using VAR to declare instead.
 
-            // IEnumerable<int> fourSixMultiples = numbers.Where();
+            var names = new List<string>()
+                {
+                    "Heather", "James", "Xavier", "Michelle", "Brian", "Nina","Kathleen", "Sophia", "Amir", "Douglas", "Zarley", "Beatrice","Theodora", "William", "Svetlana", "Charisse", "Yolanda","Gregorio", "Jean-Paul", "Evangelina", "Viktor", "Jacqueline",
+                    "Francisco", "Tre"
+                };
+
+            var sortedNames =
+                    from n in names
+                    orderby n
+                    select n;
 
 
+            Console.WriteLine("See Sorted list heyaaw:");
+                foreach (var w in sortedNames)
+                {
+                    Console.WriteLine(w);
+                }
         }
     }
 }
