@@ -23,8 +23,10 @@ namespace linq
                 where f.StartsWith("L")
                 select f;
 
+            Console.WriteLine("Here are the fruits that start with the letter L:");
             foreach (var item in queryResults)
                 {
+
                     Console.WriteLine(item);
                 }
             //sort names alphabetical using VAR to declare instead.
@@ -46,6 +48,25 @@ namespace linq
                 {
                     Console.WriteLine(w);
                 }
+
+                //build and sort descending
+
+            List<int> numbers = new List<int>()
+                {
+                15, 8, 21, 24, 32, 13, 30, 12, 7, 54, 48, 4, 49, 96
+                };
+                var sortedNumbers =
+                    from d in numbers
+                    orderby d descending
+                    select d;
+
+            Console.WriteLine("The numbers from highest to lowest:");
+                foreach (var d in sortedNumbers)
+                {
+                    Console.WriteLine(d);
+                }
+
+
         }
     }
 }
